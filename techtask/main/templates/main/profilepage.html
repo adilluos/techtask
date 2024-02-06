@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+Profile Page
+{% endblock %}
+
+{% block content %}
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img class="card-img-top" src="media/{{user_profile.profileimg}}" alt="User Profile Image">
+          <div class="card-body">
+            <h5>{{user_profile.user}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card shadow-sm">
+          <div class="card-body">
+              <b>{{user_profile.name}} {{user_profile.surname}}</b><br><br>
+              <b>Email: {{user_profile.email}}</b><br>
+              <b>Phone number: {{user_profile.phone_number}}</b><br>
+              <b>Age: {{user_profile.age}}</b><br>
+              <b>Profession: {{user_profile.profession}}</b><br>
+              <b>About me: {{user_profile.about_me}}</b><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

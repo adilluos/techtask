@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <h1>Profile Activity History</h1>
+
+  <ul>
+    {% for entry in history_entries %}
+      <li>
+        {{ entry.timestamp }} - {{ entry.activity_type }}
+        {% if entry.details %}
+          ({{ entry.details }})
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
